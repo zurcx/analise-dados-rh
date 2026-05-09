@@ -1,0 +1,96 @@
+
+  # ============================================================
+#  .gitignore — Ciência de Dados
+#  Modelos, experimentos, dados e ambientes Python
+# ============================================================
+
+
+# ----- Dados ------------------------------------------------
+# Pastas convencionais de dados — geralmente grandes demais para o Git
+data/raw/           # dados originais, nunca modificados
+data/processed/     # dados após limpeza e transformação
+data/external/      # dados vindos de fontes externas
+
+*.csv               # tabelas separadas por vírgula
+*.tsv               # tabelas separadas por tabulação
+*.parquet           # formato colunar eficiente (muito usado em Big Data)
+*.feather           # formato binário rápido para DataFrames
+*.pickle            # objetos Python serializados
+*.pkl               # mesma coisa que .pickle, extensão alternativa
+*.h5                # formato HDF5, usado para grandes volumes de dados
+*.hdf5              # mesmo formato HDF5, extensão longa
+*.json              # dados estruturados em JSON
+*.jsonl             # JSON com um objeto por linha (streaming)
+*.ndjson            # Newline Delimited JSON, igual ao .jsonl
+*.db                # banco de dados genérico
+*.sqlite            # banco de dados SQLite local
+*.sqlite3           # SQLite versão 3, extensão alternativa
+*.xls               # planilha Excel (formato antigo)
+*.xlsx              # planilha Excel (formato moderno)
+
+
+# ----- Modelos treinados ------------------------------------
+# Arquivos de modelos de ML — podem ter gigabytes de tamanho
+models/             # pasta padrão para salvar modelos
+
+*.pt                # modelo PyTorch (torch.save)
+*.pth               # modelo PyTorch, extensão alternativa
+*.onnx              # formato aberto para troca de modelos entre frameworks
+*.pb                # modelo TensorFlow (Protocol Buffer)
+*.h5                # modelo Keras salvo em HDF5
+*.keras             # modelo Keras no formato nativo novo
+*.joblib            # modelo salvo com joblib (scikit-learn)
+*.model             # modelo genérico de diversas bibliotecas
+*.bin               # pesos de modelos (ex: Hugging Face)
+
+mlruns/             # pasta de experimentos do MLflow
+outputs/            # saídas gerais de treinamento
+
+
+# ----- Notebooks --------------------------------------------
+.ipynb_checkpoints/ # checkpoints automáticos do Jupyter — não precisam de versionamento
+*-checkpoint.ipynb  # arquivos de backup gerados automaticamente pelo Jupyter
+
+
+# ----- Experimentos (MLflow, W&B, DVC) ----------------------
+mlflow/             # artefatos e banco de dados local do MLflow
+wandb/              # logs e artefatos do Weights & Biases
+.dvc/               # configuração interna do DVC (Data Version Control)
+dvc.lock            # arquivo de lock do DVC com hashes dos dados
+*.dvc               # arquivos de rastreamento de dados do DVC
+runs/               # pasta de runs de experimentos (TensorBoard, etc.)
+
+
+# ----- Ambiente Python --------------------------------------
+.env                # variáveis de ambiente (senhas, tokens, chaves de API)
+.venv/              # ambiente virtual Python criado com venv
+venv/               # ambiente virtual Python (nome alternativo comum)
+env/                # ambiente virtual Python (outro nome alternativo)
+__pycache__/        # cache de bytecode Python gerado automaticamente
+*.py[cod]           # arquivos compilados Python (.pyc, .pyo, .pyd)
+*.pyo               # bytecode Python otimizado (versões antigas)
+*.pyd               # extensão Python compilada para Windows
+*.egg-info/         # metadados de pacote Python
+dist/               # pacotes de distribuição gerados pelo build
+build/              # arquivos temporários de compilação
+*.whl               # pacote Python no formato Wheel
+.Python             # link simbólico interno de ambientes virtuais
+
+
+# ----- IDEs e editores --------------------------------------
+.vscode/            # configurações do Visual Studio Code (específicas da máquina)
+.idea/              # configurações do PyCharm / IntelliJ
+*.code-workspace    # arquivo de workspace do VS Code
+.DS_Store           # metadados de pastas do macOS (invisível no Mac)
+Thumbs.db           # cache de miniaturas do Windows Explorer
+
+
+# ----- Logs e relatórios ------------------------------------
+logs/               # pasta de logs de treinamento e execução
+*.log               # arquivos de log em geral
+reports/figures/    # imagens geradas automaticamente nos relatórios
+*.png               # imagem PNG (gráficos, plots)
+*.jpg               # imagem JPEG
+*.jpeg              # imagem JPEG (extensão alternativa)
+*.gif               # imagem GIF animada
+*.svg               # imagem vetorial (muito usada em visualizações)
